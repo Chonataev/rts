@@ -8,7 +8,7 @@
     <div class="wrapper">
         <div class="teacher_header">
             <h1>CREATE TEACHER</h1>
-            <a class="teacher_create" href="/admin/teacher"><-</a>
+            <a class="teacher_create" href="/admin/teachers"><-</a>
         </div>
 
         <form action="" method="POST">

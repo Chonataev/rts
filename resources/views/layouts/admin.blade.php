@@ -8,9 +8,9 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <!-- Styles -->
     <link rel="stylesheet" href="{{ URL::asset('css/dashboard.css') }}">
 
@@ -18,7 +18,7 @@
 <body>
 @include('components.loader')
 
-<div class="container1">
+<div class="admin_dashboard">
     <div class="top_menu">
         <div class="logo">
             <div class="logo_img">
@@ -75,15 +75,13 @@
         </div>
     </div>
 
-    <div style="background-color:#fff; padding-top: 4em; padding-left: 200px">
+    <div style="padding-top: 4em; padding-left: 200px">
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+        @if($errors->any())
+            <div class="error_message" style="position: absolute; float: right; width: calc(100% - 200px); padding-top: 5em">
+               <div class="alert alert-danger" role="alert">
+                   {{$errors->first()}}
+                </div>
             </div>
         @endif
         @yield('content')
@@ -92,7 +90,13 @@
 
 
 
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    if($('.error_message').length){
+        setTimeout(function(){
+            $('.error_message').hide();
+        }, 5000);
+    }
+</script>
 </body>
 </html>
