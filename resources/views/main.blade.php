@@ -13,6 +13,11 @@
         @endfor
     </div>
     <div class="mainBlocks">
+        <h4 class="message-wrapper">
+            @if($errors->any())
+                {{$errors->first()}}
+            @endif
+        </h4>
         <div class="mainContentBlocks">
             <div class="mainBlockTitle">О лицее</div>
             <div class="mainBlockText">

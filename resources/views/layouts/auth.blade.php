@@ -11,6 +11,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ URL::asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/header.css') }}">
 
 </head>
 <body>
@@ -19,6 +20,7 @@
 
 @yield('content')
 
+<script src="{{ URL::asset('js/header.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </body>
 </html>

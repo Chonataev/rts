@@ -1,1 +1,7 @@
-qw
+@extends('layouts.layout')
+
+@section('content')
+
+
+
+@stop

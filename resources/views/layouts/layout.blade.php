@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/header.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/footer.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/louder.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <!-- Icons -->
     <link rel="icon" href="{{ URL::asset('icons/favicon.ico') }}" type="image/x-icon">
@@ -46,6 +47,5 @@
 </script>
 <script src="{{ URL::asset('js/header.js') }}"></script>
 <script src="{{ URL::asset('js/menu.js') }}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </body>
 </html>

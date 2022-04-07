@@ -49,56 +49,45 @@
                if(topHeight > 100){
                   menu.style = "position:fixed; z-index:6; width: 100vw;";
 
-               }else{
-                  menu.style = "position: relative;";
                }
             })
          }
       )
    }
 
-   let path = location.href.split('/');
-
-   let m = menu(path[path.length-1]);
-
-
-   if(path[path.length-1] === '' || path[path.length-1] === 'main'){
-      m();
-   }
-
-   let pagesLocation=()=>{
-      let menuItems = document.querySelectorAll(".menuLinks");
-      let menuList = ["main", "about-us", "news", "galery", "parents", "appraisal"];
-      a=[];
-      menuItems.forEach(e=>{
-         a.push(e);
-      });
-      a.shift();
-      a.pop();
-
-      menuItems[menuItems.length-1].onclick = ()=>{
-         let allHeight = document.body.offsetHeight;
-         let w = window.innerHeight;
-         window.scrollTo({
-            top: allHeight-w,
-            left: 0,
-            behavior: 'smooth'
-          });
-      }
-
-      for(let i=0; i<a.length; i++){
-         a[i].addEventListener('click', ()=>{
-            location.href = `${menuList[i]}`;
-         })
-      }
-
-   }
-
-   pagesLocation();
-
-
-
-   var wrapperMenu = document.querySelector('.wrapper-menu');
+   // let path = location.href.split('/');
+   //
+   // let m = menu(path[path.length-1]);
+   //
+   //
+   // if(path[path.length-1] === '' || path[path.length-1] === 'main'){
+   //    m();
+   // }
+   //
+   // let pagesLocation=()=>{
+   //    let menuItems = document.querySelectorAll(".menuLinks");
+   //    let menuList = ["/", "about-us", "news", "gallery", "parents", "contacts","profile","login"];
+   //    let a=[];
+   //    menuItems.forEach(e=>{
+   //       a.push(e);
+   //    });
+   //    a.shift();
+   //    a.pop();
+   //
+   //
+   //    for(let i=0; i<menuItems.length; i++){
+   //        menuItems[i].addEventListener('click', ()=>{
+   //          location.href = `${menuList[i-1]}`
+   //       })
+   //    }
+   //
+   // }
+   //
+   // pagesLocation();
+   //
+   //
+   //
+   let wrapperMenu = document.querySelector('.wrapper-menu');
    let low_menu = document.querySelector(".intoMenu");
 
    wrapperMenu.addEventListener('click', function(){

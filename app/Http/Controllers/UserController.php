@@ -17,14 +17,14 @@ class UserController extends Controller
 
         if ($request->isMethod('post'))
         {
-            if (Auth::attempt(['email' => $request->email, 'password' => $request->password]))
+            if (Auth::attempt(['username' => $request->username, 'password' => $request->password]))
             {
                 $request->session()->regenerate();
                 return redirect()->intended('profile');
             }
 
             return back()->withErrors([
-                'email' => 'Неверный пароль или логин',
+                'username' => 'Неверный пароль или логин',
             ]);
         }
 
@@ -38,7 +38,7 @@ class UserController extends Controller
         }
     }
 
-    public function store(StoreRequest $request)
+    public function join(StoreRequest $request)
     {
         $this->middleware('guest');
 
@@ -47,7 +47,7 @@ class UserController extends Controller
             User::create(
                 [
                     'name'=>$request->name,
-                    'email' => $request->email,
+                    'username' => $request->username,
                     'password' => Hash::make($request->password),
                     'surname'=>$request->surname,
                     'patronymic' => $request->patronymic,
@@ -58,7 +58,26 @@ class UserController extends Controller
 
     }
 
-    public function profile(){
-        return view('profile');
+    public function profile()
+    {
+        $id = Auth::id();
+        $user = User::query()->find($id);
+        return view('profile',compact('user'));
     }
+
+    public function logout(StoreRequest $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
+
+    public function dashboard(){
+        return view('admin.dashboard');
+    }
+
 }
