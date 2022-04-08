@@ -29,12 +29,12 @@
         <div class="top_nav">
             <div class="top_nav_link">
                 <div class="my_profile_link">
-                    <a href="profile">
+                    <a href="/profile">
                         <img class="my_profile_link_image" src="{{ URL::asset('images/icons/user.png') }}" alt="">
                     </a>
                 </div>
                 <div class="sing_out_link">
-                    <a href="logout">
+                    <a href="/logout">
                         <img class="my_profile_link_image" src="{{ URL::asset('images/icons/account-logout-xxl.png') }}" alt="">
                     </a>
                 </div>

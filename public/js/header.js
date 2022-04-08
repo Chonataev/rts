@@ -1,16 +1,16 @@
 
 function header(){
-   let slids = document.querySelectorAll(".headerSliderBlocks");
+   let slides = document.querySelectorAll(".headerSliderBlocks");
 
-   function moveSlid(slide, bool){
+   function moveSlid(slides, bool){
          setTimeout(() => {
-            slide.style = `transform: translateX(0%);`;
+             slides.style = `transform: translateX(0%);`;
          }, 5000);
          setTimeout(() => {
             if(bool){
-               slide.style = `transform: translateX(-100%);`;
+                slides.style = `transform: translateX(-100%);`;
             }else{
-               slide.style = `transform: translateX(100%);`;
+                slides.style = `transform: translateX(100%);`;
             }
          }, 10000);
    }
@@ -20,7 +20,7 @@ function header(){
       let i = 4;
       setInterval(() => {
 
-         moveSlid(slids[i], bool);
+         moveSlid(slides[i], bool);
 
          if(i===0){
             i=5;

@@ -34,17 +34,18 @@
 
 @include('components.footer')
 
-<script type="text/javascript">
-    (() => {
-        let links = ['about-us', 'news', 'galery', 'parents'];
-        let more = document.querySelectorAll('.mainContentLearnMore');
-        for (let i = 0; i < more.length; i++) {
-            more[i].addEventListener("click", () => {
-                location.href = `${links[i]}`;
-            })
-        }
-    })();
-</script>
+{{--<script type="text/javascript">--}}
+{{--    (() => {--}}
+{{--        let links = ['about-us', 'news', 'galery', 'parents'];--}}
+{{--        let more = document.querySelectorAll('.mainContentLearnMore');--}}
+{{--        for (let i = 0; i < more.length; i++) {--}}
+{{--            more[i].addEventListener("click", () => {--}}
+{{--                location.href = `${links[i]}`;--}}
+{{--            })--}}
+{{--        }--}}
+{{--    })();--}}
+{{--</script>--}}
+
 <script src="{{ URL::asset('js/header.js') }}"></script>
 <script src="{{ URL::asset('js/menu.js') }}"></script>
 </body>

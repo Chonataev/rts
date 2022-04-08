@@ -19,28 +19,6 @@
        l.shift();
        l.pop();
 
-       switch (now) {
-          case "":
-            l[0].style = "opacity: 1; border-bottom: 1.5px solid rgba(255, 251, 251, 0.5);";
-            break;
-         case "about-us":
-            l[1].style = "opacity: 1; border-bottom: 1.5px solid rgba(255, 251, 251, 0.5);";
-            break;
-         case "news":
-            l[2].style = "opacity: 1; border-bottom: 1.5px solid rgba(255, 251, 251, 0.5);";
-            break;
-         case "galery":
-            l[3].style = "opacity: 1; border-bottom: 1.5px solid rgba(255, 251, 251, 0.5);";
-            break;
-         case "parents":
-            l[4].style = "opacity: 1; border-bottom: 1.5px solid rgba(255, 251, 251, 0.5);";
-            break;
-         case "methods":
-            l[5].style = "opacity: 1; border-bottom: 1.5px solid rgba(255, 251, 251, 0.5);";
-            break;
-          default:
-             break;
-       }
 
       return (
          ()=>{
@@ -55,14 +33,14 @@
       )
    }
 
-   // let path = location.href.split('/');
-   //
-   // let m = menu(path[path.length-1]);
-   //
-   //
-   // if(path[path.length-1] === '' || path[path.length-1] === 'main'){
-   //    m();
-   // }
+   let path = location.href.split('/');
+
+   let m = menu(path[path.length-1]);
+
+
+   if(path[path.length-1] === '' || path[path.length-1] === 'main'){
+      m();
+   }
    //
    // let pagesLocation=()=>{
    //    let menuItems = document.querySelectorAll(".menuLinks");

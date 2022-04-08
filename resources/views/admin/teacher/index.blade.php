@@ -16,7 +16,6 @@ Dashboard
                 <th>Patronymic</th>
                 <th>Surname</th>
                 <th>view</th>
-                <th>edit</th>
                 <th>delete</th>
             </tr>
             @foreach ($teachers as $teacher)
@@ -24,9 +23,9 @@ Dashboard
                     <td>{{$teacher->name}}</td>
                     <td>{{$teacher->patronymic}}</td>
                     <td>{{$teacher->surname}}</td>
-                    <td><a href="/admin/teacher/view/{{$teacher->id}}">view</a></td>
-                    <td><a href="/admin/teacher/edit/{{$teacher->id}}">edit</a></td>
+                    <td><a href="/teacher/profile/{{$teacher->username}}">view</a></td>
                     <td><a href="/admin/teacher/delete/{{$teacher->id}}">delete</a></td>
+
                 </tr>
             @endforeach
         </table>

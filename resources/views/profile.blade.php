@@ -46,13 +46,6 @@
                         <div class="col-8">
                             <div style="font-weight:600">{{$user->surname}}</div>
                             <div style="font-weight:600">{{$user->patronymic}}</div>
-                            <div>
-                                @if ($user->role)
-                                    user
-                                @else
-                                    admin
-                                @endif
-                            </div>
                         </div>
                     </div>
                 </div>

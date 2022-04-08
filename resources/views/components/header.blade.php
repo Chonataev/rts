@@ -25,7 +25,6 @@
                 <div><a class="menuLinks" href="/profile">Profile</a></div>
                 <div><a class="menuLinks" href="/dashboard">Dashboard</a></div>
                 <div><a class="menuLinks" href="/logout">Logout</a></div>
-                <div><a class="menuLinks" href="/join">Join</a></div>
             @else
 
                 <div><a class="menuLinks" href="/">Main</a></div>

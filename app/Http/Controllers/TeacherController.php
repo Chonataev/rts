@@ -11,11 +11,6 @@ use Illuminate\Support\Facades\Hash;
 class TeacherController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('isAdmin');
-    }
-
     public function index(){
         $teachers = User::all()->where('role', '=', 12);
         return view('admin.teacher.index', compact('teachers'));
@@ -48,9 +43,20 @@ class TeacherController extends Controller
                 dd(122);
             }
             dd(12);
-            return redirect()->route('admin.teacher')->with('error','Failed to add teacher!');
+            return redirect()->route('admin.teacher.index')->with('error','Failed to add teacher!');
         }
         return view('admin.teacher.create');
 
+    }
+
+    public function view($username)
+    {
+        $teacher = User::where('username',$username)->first();
+        return view('teacher.profile', compact('teacher'));
+    }
+
+    public function delete($id){
+        User::destroy($id);
+        return redirect()->route('admin.teacher.index')->with('success', 'Teacher has been deleted!');
     }
 }
