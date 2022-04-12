@@ -6,6 +6,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ClassController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -63,6 +64,12 @@ Route::group(['middleware' => 'isAdmin'], function()
     Route::get('/admin/news', [NewsController::class, 'index'])->name('admin.news.index');
     Route::match(['get', 'post'],'/admin/news/store', [NewsController::class, 'store'])->name('admin.news.store');
     Route::delete('/admin/news/delete{id}', [NewsController::class, 'destroy'])->name('admin.news.delete');
+
+
+    Route::get('/admin/classes', [ClassController::class, 'index'])->name('admin.classes.index');
+    Route::match(['get', 'post'],'/admin/classes/store', [ClassController::class, 'store'])->name('admin.classes.store');
+    Route::match(['get', 'post'],'/admin/classes/edit', [ClassController::class, 'edit'])->name('admin.classes.edit');
+    Route::delete('/admin/classes/delete{id}', [ClassController::class, 'destroy'])->name('admin.classes.delete');
 });
 
 
